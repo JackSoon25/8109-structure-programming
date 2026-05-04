@@ -43,5 +43,23 @@ function addTask(tasks, newName, newDateDue, newUrgency) {
     tasks.push(newTask);
 }
 
+function deleteTask(tasks, indexToDelete) {
+    // goal: given id, find its index number
+    let i = 0;
+    let wantedIndex = -1; //-1 doesn't found
+    while (i < tasks.length) {
+        if (tasks[i].id == idToDelete) {
+            wantedIndex = i;
+            break;
+        }
+        i++;
+    }
+    if (wantedIndex !=-1){
+        tasks.splice(wantedIndex, 1);
+    }
+}
+
+
 addTask(tasks,"Clean the bathroom","2026-05-04",5);
 displayTasks(tasks);
+deleteTask(tasks, 1);
